@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Student Management System</h1>
+    <div class="container">
+        <div class="left-panel">
+            <button onclick="showForm('addForm')">Add Student</button>
+            <button onclick="showForm('searchForm')">Search Student</button>
+            <button onclick="showForm('deleteForm')">Delete Student</button>
+            <button onclick="showForm('updateForm')">Update Student</button>
+        </div>
+        <div class="right-panel">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>DOB</th>
+                        <th>DOJ</th>
+                        <th>Mobile</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Gender</th>
+                    </tr>
+                </thead>
+                <tbody id="studentTable">
+                    <!-- Student data will be populated here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="addForm" class="form" style="display:none;">
+        <h2>Add Student</h2>
+        <input type="number" id="studentId" placeholder="Student ID" required>
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="date" id="dob" required>
+        <input type="date" id="doj" required>
+        <input type="tel" id="mobile" placeholder="Mobile" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" id="address" placeholder="Address" required>
+        <select id="gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+            <option value="Prefer Not to Say">Prefer Not to Say</option>
+        </select>
+        <button onclick="addStudent()">✓</button>
+    </div>
+
+    <div id="searchForm" class="form" style="display:none;">
+        <h2>Search Student</h2>
+        <input type="text" id="searchName" placeholder="Name" required>
+        <button onclick="searchStudent()">✓</button>
+    </div>
+
+    <div id="deleteForm" class="form" style="display:none;">
+        <h2>Delete Student</h2>
+        <input type="number" id="deleteId" placeholder="Student ID" required>
+        <button onclick="deleteStudent()">✓</button>
+    </div>
+
+    <div id="updateForm" class="form" style="display:none;">
+        <h2>Update Student</h2>
+        <input type="number" id="updateId" placeholder="Student ID" required>
+        <input type="text" id="updateName" placeholder="Name" required>
+        <input type="date" id="updateDob" required>
+        <input type="date" id="updateDoj" required>
+        <input type="tel" id="updateMobile" placeholder="Mobile" required>
+        <input type="email" id="updateEmail" placeholder="Email" required>
+        <input type="text" id="updateAddress" placeholder="Address" required>
+        <select id="updateGender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+            <option value="Prefer Not to Say">Prefer Not to Say</option>
+        </select>
+        <button onclick="updateStudent()">✓</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
